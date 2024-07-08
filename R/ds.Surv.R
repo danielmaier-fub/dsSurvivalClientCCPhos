@@ -149,6 +149,8 @@ ds.Surv <- function(time = NULL,
                     type = type, 
                     origin = origin) # SurvDS
    
+   print(calltext)
+   
    # call aggregate function
    output <- DSI::datashield.assign(conns = datasources, value = calltext, symbol = objectname) # 'surv_object') 
  
