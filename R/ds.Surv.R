@@ -96,6 +96,12 @@ ds.Surv <- function(time = NULL,
 		    objectname = NULL, 
 		    datasources = NULL)
 {
+  
+  print(event)
+  print(time)
+  print(time2)
+  print(type)
+  print(objectname)
    
    # look for DS connections
    # if one not provided then get current
@@ -137,7 +143,11 @@ ds.Surv <- function(time = NULL,
 
    
    # call the server side function
-   calltext <- call("SurvDS", time, time2, event, type, origin) # SurvDS
+   calltext <- call("SurvDS", time = time, 
+                    time2 = time2, 
+                    event = event, 
+                    type = type, 
+                    origin = origin) # SurvDS
    
    # call aggregate function
    output <- DSI::datashield.assign(conns = datasources, value = calltext, symbol = objectname) # 'surv_object') 
